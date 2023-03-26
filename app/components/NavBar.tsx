@@ -1,7 +1,9 @@
 'use client'
 
-import { AppBar, Button, Stack, Typography } from "@mui/material"
+import { AppBar, Stack, Typography } from "@mui/material"
 import ProfileImage from './ProfileImage'
+import { DesktopMenu } from "./DesktopMenu";
+import { MobileMenu } from "./MobileMenu";
 
 const pages = ['Home', 'About', 'Blog', 'Contact']
 
@@ -13,15 +15,12 @@ export default function NavBar() {
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1, paddingLeft: 1 }}>
                     BLOG
                 </Typography>
-                {pages.map((page, i) => (
-                    <Button 
-                        href={ page == 'Home' ? `/` : `${page.toLowerCase()}`} variant='text' 
-                        key={i} 
-                        color='inherit'
-                    >
-                        {page}
-                    </Button>
-                ))}
+                {/* --- Desktop menu start --- */}
+                    {DesktopMenu({menuItems: pages})}
+                {/* --- Destop menu end --- */}
+                {/* --- Mobile menu start --- */}
+                    {MobileMenu({menuItems: pages})}
+                {/* --- Mobile menu end --- */}
                 <ProfileImage src='/images/Chopin-1.jpg' alt='profile image'/>
             </Stack>
         </AppBar>
