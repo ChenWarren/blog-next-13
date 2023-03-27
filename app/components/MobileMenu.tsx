@@ -1,12 +1,13 @@
-'use client';
-import { useState, MouseEvent } from "react";
-import { Box, IconButton, Menu, MenuItem, Link } from "@mui/material";
-import MenuIcon from '@mui/icons-material/Menu';
-
 // Mobile menu component
+
+'use client'
+import { useState, MouseEvent } from "react"
+import { Box, IconButton, Menu, MenuItem, Link } from "@mui/material"
+import MenuIcon from '@mui/icons-material/Menu'
+
 export function MobileMenu({ menuItems }: { menuItems: string[]; }) {
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-    const open = Boolean(anchorEl);
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+    const open = Boolean(anchorEl)
 
     const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
         setAnchorEl(event.currentTarget);

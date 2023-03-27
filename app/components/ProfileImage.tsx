@@ -1,3 +1,5 @@
+// ProfileImage component
+
 import { Avatar } from '@mui/material'
 
 interface ProfileImageProps {
